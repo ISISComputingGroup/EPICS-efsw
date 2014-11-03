@@ -16,16 +16,22 @@ LIBRARY_IOC += efsw
 DBD += efsw.dbd
 INC += efsw.h efsw.hpp
 
-# specify all source files to be compiled and added to the library
+# specify all source files to be compiled and added to the library		
+efsw_SRCS += FileSystemImpl.cpp MutexImpl.cpp SystemImpl.cpp ThreadImpl.cpp
+
+SRC_DIRS += $(TOP)/efswApp/src/efsw/platform/posix
+
+efsw_SRCS += WinFileSystemImpl.cpp WinMutexImpl.cpp WinSystemImpl.cpp WinThreadImpl.cpp
+			
+SRC_DIRS += $(TOP)/efswApp/src/efsw/platform/win
+
 efsw_SRCS += Debug.cpp DirectorySnapshot.cpp DirectorySnapshotDiff.cpp DirWatcherGeneric.cpp FileInfo.cpp  \
 			FileSystem.cpp FileWatcher.cpp FileWatcherCWrapper.cpp FileWatcherFSEvents.cpp FileWatcherGeneric.cpp \
 			FileWatcherImpl.cpp FileWatcherInotify.cpp FileWatcherKqueue.cpp FileWatcherWin32.cpp Log.cpp Mutex.cpp \
 			String.cpp System.cpp Thread.cpp Watcher.cpp WatcherFSEvents.cpp WatcherGeneric.cpp WatcherInotify.cpp \
 			WatcherKqueue.cpp WatcherWin32.cpp
-			
-efsw_SRCS += FileSystemImpl.cpp MutexImpl.cpp SystemImpl.cpp ThreadImpl.cpp
-			
-SRC_DIRS += $(TOP)/efswApp/src $(TOP)/efswApp/src/efsw/platform/win $(TOP)/efswApp/src/efsw/platform/posix
+
+SRC_DIRS += $(TOP)/efswApp/src			
 
 #if_eq ($(EPICS_HOST_ARCH), windows-x64-debug)
 

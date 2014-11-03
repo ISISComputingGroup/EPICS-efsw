@@ -1,4 +1,4 @@
-#include <efsw/platform/win/MutexImpl.hpp>
+#include <efsw/platform/win/WinMutexImpl.hpp>
 
 #if EFSW_PLATFORM == EFSW_PLATFORM_WIN32
 

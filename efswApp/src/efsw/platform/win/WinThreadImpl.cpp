@@ -1,4 +1,4 @@
-#include <efsw/platform/win/ThreadImpl.hpp>
+#include <efsw/platform/win/WinThreadImpl.hpp>
 #include <efsw/Thread.hpp>
 #include <assert.h>
 
