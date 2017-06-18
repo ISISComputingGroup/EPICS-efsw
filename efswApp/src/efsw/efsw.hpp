@@ -31,6 +31,13 @@
 #include <string>
 #include <list>
 
+/* 3.14 defines EPICS_DLL_NO for static builds, 3.15 defines EPICS_BUILD_DLL for shared builds */
+#ifndef EPICS_DLL_NO
+#ifdef EPICS_BUILD_DLL
+#define EFSW_DYNAMIC
+#endif /* EPICS_BUILD_DLL */
+#endif /* EPICS_DLL_NO */
+
 #if defined(_WIN32)
 	#ifdef EFSW_DYNAMIC
 		// Windows platforms

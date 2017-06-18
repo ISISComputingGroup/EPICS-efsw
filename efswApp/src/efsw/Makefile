@@ -16,6 +16,11 @@ LIBRARY_IOC += efsw
 DBD += efsw.dbd
 INC += efsw.h efsw.hpp
 
+ifeq ($(SHARED_LIBRARIES),YES)
+USR_CFLAGS += -DEFSW_EXPORTS
+USR_CXXFLAGS += -DEFSW_EXPORTS
+endif
+
 # specify all source files to be compiled and added to the library		
 efsw_SRCS += FileSystemImpl.cpp MutexImpl.cpp SystemImpl.cpp ThreadImpl.cpp
 

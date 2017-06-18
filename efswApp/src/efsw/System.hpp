@@ -5,7 +5,7 @@
 
 namespace efsw {
 
-class System
+class EFSW_API System
 {
 	public:
 		/// Sleep for x milliseconds

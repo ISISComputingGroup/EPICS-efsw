@@ -7,7 +7,7 @@
 
 namespace efsw {
 
-class FileSystem
+class EFSW_API FileSystem
 {
 	public:
 		static bool isDirectory( const std::string& path );
